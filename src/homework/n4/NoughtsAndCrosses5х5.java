@@ -147,19 +147,43 @@ public class NoughtsAndCrosses5х5 {
     }
 
     private static boolean isDiagonalFilled(char symbol) {
-        int leftDiagonalCounter = 0;
-        int rightDiagonalCounter = 0;
+        int rightMainDiagonalCounter = 0;
+        int rightSmallUpperDiagonalCounter = 0;
+        int rightSmallLowerDiagonalCounter = 0;
+        int leftMainDiagonalCounter = 0;
+        int leftSmallUpperDiagonalCounter = 0;
+        int leftSmallLowerDiagonalCounter = 0;
+
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 if (i == j && field[i][j] == symbol) {
-                    leftDiagonalCounter += 1;
+                    leftMainDiagonalCounter += 1;
                 }
+                if (i == j - 1 && field[i][j] == symbol) {
+                    leftSmallUpperDiagonalCounter += 1;
+                }
+                if (i == j + 1 && field[i][j] == symbol) {
+                    leftSmallLowerDiagonalCounter += 1;
+                }
+
                 if (i == size - 1 - j && field[i][j] == symbol) {
-                    rightDiagonalCounter += 1;
+                    rightMainDiagonalCounter += 1;
+                }
+                if (i == size - 2 - j && field[i][j] == symbol) {
+                    rightSmallLowerDiagonalCounter += 1;
+                }
+                if (i == size - j && field[i][j] == symbol) {
+                    rightSmallUpperDiagonalCounter += 1;
                 }
             }
         }
-        if (leftDiagonalCounter == size - 1 || rightDiagonalCounter == size - 1) {
+        if (leftMainDiagonalCounter == size - 1 ||
+                leftSmallUpperDiagonalCounter == size - 1 ||
+                leftSmallLowerDiagonalCounter == size - 1 ||
+                rightMainDiagonalCounter == size - 1 ||
+                rightSmallLowerDiagonalCounter == size - 1 ||
+                rightSmallUpperDiagonalCounter == size - 1
+        ) {
             return true;
         }
         return false;
