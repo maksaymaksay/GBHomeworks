@@ -26,26 +26,6 @@ public class Employee {
         System.out.println(this.age);
     }
 
-    public String getFIO() {
-        return FIO;
-    }
-
-    public String getPosition() {
-        return position;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public int getSalary() {
-        return salary;
-    }
-
     public int getAge() {
         return age;
     }
