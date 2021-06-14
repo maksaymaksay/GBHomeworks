@@ -3,26 +3,17 @@ package homework.n6;
 public class Cat extends Animal {
     private static int catCount;
 
-    public Cat(String catName) {
-        super(catName);
+    public Cat(String catName, int runLengthLimit, int swimLengthLimit) {
+        super(catName, runLengthLimit, swimLengthLimit);
         catCount++;
     }
 
     @Override
-    public void run(int length) {
-        if (length > 200) {
-            System.out.println(super.getName() + " устал");
-        } else {
-            System.out.println(super.getName() + " пробежал " + length + "м.");
-        }
-    }
-
-    @Override
     public void swim(int length) {
-        System.out.println(super.getName() + " не умеет плавать");
+        System.out.println(super.name + " не умеет плавать");
     }
 
-    public static int getPopulation(){
+    public static int getPopulation() {
         return catCount;
     }
 }
