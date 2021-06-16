@@ -12,18 +12,15 @@ public class Cat {
     }
 
     public void eat(Plate plate) {
-        if (plate.decreaseFood(appetite)){
+        if (satiety) {
+            System.out.println(name + " не голоден");
+        } else if (plate.checkFood(appetite)) {
+            plate.decreaseFood(appetite);
             satiety = true;
+            System.out.println(name + " поел");
         } else {
-            satiety = false;
+            System.out.println(name + " не поел");
         }
     }
-
-    public boolean getSatiety(){
-        return satiety;
-    }
-
-    public String getName(){
-        return name;
-    }
 }
+

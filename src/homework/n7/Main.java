@@ -19,19 +19,9 @@ public class Main {
 
         for (Cat cat : catArray) {
             cat.eat(plateForArray);
-            checkSatiety(cat);
         }
 
         plateForArray.addFood(10);
         catArray[4].eat(plateForArray);
-        checkSatiety(catArray[4]);
-    }
-
-    private static void checkSatiety(Cat cat) {
-        if (cat.getSatiety()) {
-            System.out.println(cat.getName() + " поел");
-        } else {
-            System.out.println(cat.getName() + " не поел");
-        }
     }
 }

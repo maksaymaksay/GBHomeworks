@@ -11,18 +11,20 @@ public class Plate {
         System.out.println("plate: " + food);
     }
 
-    public boolean decreaseFood(int n) {
-        if (food - n < 0) {
-            System.out.println("Мало еды!");
-            return false;
-        } else {
+    public void decreaseFood(int n) {
+        if (checkFood(n)) {
             food -= n;
-            return true;
+        } else {
+            System.out.println("Мало еды!");
         }
     }
 
     public void addFood(int food) {
         System.out.println("В тарелке еды = " + this.food + " Добавлено еды " + food);
         this.food += food;
+    }
+
+    public boolean checkFood(int food){
+        return food <= this.food;
     }
 }
